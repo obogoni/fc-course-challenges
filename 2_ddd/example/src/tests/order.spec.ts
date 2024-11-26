@@ -32,19 +32,27 @@ describe("Order test suites", () => {
     }).toThrowError("Order items are required");
   });
 
+  it("should throw error when item quantity is not bigger than zero", () => {
+
+    expect(() => {
+
+      const item = new OrderItem("1", "1", "Pastel", 0, 10);
+
+    }).toThrowError("Quantity is required");
+  });
 
   it("should throw error when items are empty", () => {
 
     //Arrange
-    const item1 = new OrderItem("1", "Pastel", 10);
-    const item2 = new OrderItem("2", "Caldo de cana", 8);
+    const item1 = new OrderItem("1", "1", "Pastel", 2, 10);
+    const item2 = new OrderItem("2", "2", "Caldo de cana", 1, 8);
     const order = new Order("1", "1", [item1, item2]);
 
     //Act
-    const total = order.total();
+    const total = order.getTotal();
 
     //Assert
-    expect(total).toBe(18);
+    expect(total).toBe(28);
   });
 
 }); 

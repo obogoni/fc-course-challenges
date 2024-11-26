@@ -20,7 +20,7 @@ export default class Order {
     if (this._items.length === 0) throw new Error("Order items are required");
   }
 
-  total(): number {
-    return this._items.reduce((acc, item) => acc + item.getPrice(), 0);
+  getTotal(): number {
+    return this._items.reduce((acc, item) => acc + item.getTotal(), 0);
   }
 }

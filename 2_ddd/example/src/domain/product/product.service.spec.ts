@@ -1,5 +1,5 @@
-import Product from "../domain/product/product"
-import { ProductService } from "../domain/product/product.service";
+import Product from "./product"
+import { ProductService } from "./product.service";
 
 describe("Product service unit tests", () => {
 

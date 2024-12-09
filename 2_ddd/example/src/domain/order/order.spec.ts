@@ -1,5 +1,5 @@
-import Order from "../domain/order/order"
-import OrderItem from "../domain/order/order_item";
+import Order from "./order"
+import OrderItem from "./order_item";
 
 describe("Order test suites", () => {
 
